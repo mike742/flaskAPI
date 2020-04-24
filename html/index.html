@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+
+
+    <div id="res"></div>
+</body>
+
+<script>
+    function httpGet(theUrl) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, false); // false for synchronous request
+        xmlHttp.send(null);
+        return xmlHttp.responseText;
+    }
+
+    var url = 'http://localost:5000/getAll';
+    var html = JSON.parse(httpGet(url));
+
+
+
+	$( document ).ready(function() {
+		console.log( "ready!" );
+	});
+
+</script>
+
+</html>
